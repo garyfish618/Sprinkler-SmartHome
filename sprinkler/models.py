@@ -14,6 +14,26 @@ class SprinklerZone(db.Model):
         self.active = active
         self.time_left = time_left
 
+class Schedule(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    schedule_name = db.Column(db.String(80), unique=True, nullable=False)
+    biweekly = db.Column(db.Boolean(), nullable=False)
+    days_of_week = db.Column(db.Array(String), nullable=False)
+    pin_numbers = db.Column(db.Array(Integer), nullable=False)
+
+    def __init__(self, schedule_name, biweekly, days_of_week, pin_numbers):
+        self.schedule_name = schedule_name
+        self.biweekly = biweekly
+        self.days_of_week = days_of_week
+        self.pin_numbers = pin_numbers
+
+    
+
+    
+    
+
+
+
 
 
 
