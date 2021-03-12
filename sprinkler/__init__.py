@@ -66,7 +66,7 @@ def zone(zone_id=None):
 @app.route('/schedule/<int:schedule_id>', methods=['GET', 'PUT'])
 def schedule(schedule_id=None):
 
-    if request.method == 'GET' 
+    if request.method == 'GET': 
         if schedule_id == None:
             return Response(__model_to_dict__(Schedule.query.all()), status=200, mimetype='application/JSON' )
 
@@ -105,9 +105,9 @@ def schedule(schedule_id=None):
             schedule.pin_numbers = request.form['days_of_week']
 
 
-        if biweekly in request.form || days_of_week in request.form:
-            pass
-            #TODO: Add code to adjust scheduler 
+        # if biweekly in request.form || days_of_week in request.form:
+        #     pass
+        #     #TODO: Add code to adjust scheduler 
             
 
 

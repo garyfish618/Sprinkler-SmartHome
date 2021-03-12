@@ -18,8 +18,8 @@ class Schedule(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     schedule_name = db.Column(db.String(80), unique=True, nullable=False)
     biweekly = db.Column(db.Boolean(), nullable=False)
-    days_of_week = db.Column(db.Array(String), nullable=False)
-    pin_numbers = db.Column(db.Array(Integer), nullable=False)
+    days_of_week = db.Column(db.String, nullable=False)
+    pin_numbers = db.Column(db.String, nullable=False)
 
     def __init__(self, schedule_name, biweekly, days_of_week, pin_numbers):
         self.schedule_name = schedule_name
